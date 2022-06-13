@@ -12,3 +12,14 @@ You can use import the datastructure .py in your program as
 from datastructure import stack ... 
 s = stack() 
 *with every function you can use the .help() method to access the help method 
+
+Next Implmentation :
+Singly Link List 
+Binary tree 
+Heap 
+Binary Search Tree 
+Treaps
+Directed Graphs 
+Undirected Graphs 
+K Dimentional Tree 
+
