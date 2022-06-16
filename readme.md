@@ -52,13 +52,22 @@ The datastructure.py contains implementaion of :
   - You can use the .insert() method to insert into the filter !
   - You can use the .check() method to check into the filter !
 
+- LinkList 
+  - You can intialize the link list by #from slinklist import linklist and then s = linklist(rootval)
+  - You can use the add_node_start(val) to add value to the start of the link list
+  - You can use the add_node_end(val) to add value to the end of the link list 
+  - You can use the print_lisk_list() to print the link list 
+  - You can use the delete_start() to delete the node from start of linklist 
+  - You can use the delete_end() to delete the node from end of linklist 
+  - You can use the delete_between(val) to delete the node in between of linklist 
+  - You can use the reverse_link_list() to reverse the link list 
+
 # You can use import the datastructure .py in your program as 
 from datastructure import stack ... 
 s = stack() 
 *with every function you can use the .help() method to access the help method 
 
 Next Implmentation :
-- Singly Link List 
 - Binary tree 
 - Heap 
 - Binary Search Tree 
