@@ -80,7 +80,6 @@ s = stack()
 *with every function you can use the .help() method to access the help method 
 
 Next Implmentation :
-- Binary tree 
 - Heap 
 - Binary Search Tree 
 - Treaps
