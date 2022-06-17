@@ -62,6 +62,17 @@ The datastructure.py contains implementaion of :
   - You can use the delete_end() to delete the node from end of linklist 
   - You can use the delete_between(val) to delete the node in between of linklist 
   - You can use the reverse_link_list() to reverse the link list 
+ 
+- Binary Tree
+  - You can use the different traversals to print the tree in your desired order 
+      - level_order_traversal()
+      - in_order_traversal()
+      - post_order_traversal()
+      - pre_order_traversal()
+  - You can use height() to get the height of binary tree 
+  - insert_auto() inserts node in the binary tree by checking on the root value 
+  - insert_right() inserts in the right sub tree 
+  - insert_left() inserts in the left sub tree 
 
 # You can use import the datastructure .py in your program as 
 from datastructure import stack ... 
