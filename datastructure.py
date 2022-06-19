@@ -472,4 +472,6 @@ class maxheap:
     def peek(self):
         print("Max value is : ",self.heap[1])
     
-
+class new_test_class:
+    def yo(self):
+        print(doesnoting)
