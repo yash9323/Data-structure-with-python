@@ -75,14 +75,14 @@ The datastructure.py contains implementaion of :
   - insert_left() inserts in the left sub tree 
 
 - Min Heap
-  You can use minheap as \n
-  from datastructure import minheap \n
-  mheap = minheap() \n
-  mheap.add_node() -- adds node to the min heap \n
-  mheap.delete() -- deletes the min node from the heap \n
-  mheap.size_of_heap() -- prints the size of the heap \n
-  mheap.print_heap() --prints the heap \n
-  mheap.peak() -- prints the min value of the heap \n 
+  You can use minheap as <br />
+  from datastructure import minheap <br />
+  mheap = minheap() <br />
+  mheap.add_node() -- adds node to the min heap <br />
+  mheap.delete() -- deletes the min node from the heap <br />
+  mheap.size_of_heap() -- prints the size of the heap <br />
+  mheap.print_heap() --prints the heap <br />
+  mheap.peak() -- prints the min value of the heap <br /> 
 
 
 
