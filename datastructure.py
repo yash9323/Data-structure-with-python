@@ -339,3 +339,137 @@ class bloomfilter:
     def help(self):
         print("You can use the .insert() method to insert into the filter !")
         print("You can use the .check() method to check into the filter !")
+
+class minheap:
+    def __init__(self):
+        self.heap = []
+        self.heap.append("root")
+    
+    def index_of_parent(self,index):
+        return int(index // 2)
+
+    def swap(self,index,parent):
+        temp = self.heap[index]
+        self.heap[index] = self.heap[parent]
+        self.heap[parent] = temp
+    
+    def add_node(self,val):
+        self.heap.append(val)
+        if len(self.heap) == 2:
+            return 
+        index = len(self.heap) - 1 
+        parent = self.index_of_parent(index)
+        while self.heap[index] < self.heap[parent]:
+            self.swap(index,parent)
+            index = parent 
+            parent = self.index_of_parent(index)
+            if index == 1:
+                break
+
+    def delete(self):
+        self.heap[1] = self.heap[-1]
+        del self.heap[-1]
+        index = 1
+        left = index * 2
+        right = (index * 2 ) + 1
+        while True:
+            try:
+                if self.heap[index] > self.heap[left]:
+                    self.swap(index,left)
+                    index = left
+                    left = index * 2
+                    right = (index * 2 ) + 1
+                    if left > len(self.heap) - 1 :
+                        break
+                    if right > len(self.heap) - 1 :
+                        break
+                    continue
+                if self.heap[index] > self.heap[right]:
+                    self.swap(index,right)
+                    index = right
+                    left = index * 2
+                    right = (index * 2 ) + 1
+                    if left > len(self.heap) - 1 :
+                        break
+                    if right > len(self.heap) - 1 :
+                        break
+                    continue
+            except:
+                pass
+            
+    def size_of_heap(self):
+        print(f"There are {len(self.heap)} in the Heap !")
+    
+    def print_heap(self):
+        print(self.heap[1:])
+
+    def peek(self):
+        print("Min value is : ",self.heap[1])
+
+class maxheap:
+    def __init__(self):
+        self.heap = []
+        self.heap.append("root")
+    
+    def index_of_parent(self,index):
+        return int(index // 2)
+
+    def swap(self,index,parent):
+        temp = self.heap[index]
+        self.heap[index] = self.heap[parent]
+        self.heap[parent] = temp
+    
+    def add_node(self,val):
+        self.heap.append(val)
+        if len(self.heap) == 2:
+            return 
+        index = len(self.heap) - 1 
+        parent = self.index_of_parent(index)
+        while self.heap[index] > self.heap[parent]:
+            self.swap(index,parent)
+            index = parent 
+            parent = self.index_of_parent(index)
+            if index == 1:
+                break
+
+    def delete(self):
+        self.heap[1] = self.heap[-1]
+        del self.heap[-1]
+        index = 1
+        left = index * 2
+        right = (index * 2 ) + 1
+        while True:
+            try:
+                if self.heap[index] < self.heap[left]:
+                    self.swap(index,left)
+                    index = left
+                    left = index * 2
+                    right = (index * 2 ) + 1
+                    if left > len(self.heap) - 1 :
+                        break
+                    if right > len(self.heap) - 1 :
+                        break
+                    continue
+                if self.heap[index] < self.heap[right]:
+                    self.swap(index,right)
+                    index = right
+                    left = index * 2
+                    right = (index * 2 ) + 1
+                    if left > len(self.heap) - 1 :
+                        break
+                    if right > len(self.heap) - 1 :
+                        break
+                    continue
+            except:
+                pass
+            
+    def size_of_heap(self):
+        print(f"There are {len(self.heap)} in the Heap !")
+    
+    def print_heap(self):
+        print(self.heap[1:])
+
+    def peek(self):
+        print("Max value is : ",self.heap[1])
+    
+
