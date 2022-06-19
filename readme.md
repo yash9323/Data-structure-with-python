@@ -74,6 +74,18 @@ The datastructure.py contains implementaion of :
   - insert_right() inserts in the right sub tree 
   - insert_left() inserts in the left sub tree 
 
+- Min Heap
+  You can use minheap as \n
+  from datastructure import minheap \n
+  mheap = minheap() \n
+  mheap.add_node() -- adds node to the min heap \n
+  mheap.delete() -- deletes the min node from the heap \n
+  mheap.size_of_heap() -- prints the size of the heap \n
+  mheap.print_heap() --prints the heap \n
+  mheap.peak() -- prints the min value of the heap \n 
+
+
+
 # You can use import the datastructure .py in your program as 
 from datastructure import stack ... 
 s = stack() 
