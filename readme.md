@@ -1,7 +1,34 @@
 # Data structure with Python 
-This repo contains the implementation of the most used data structure with python 
-You can use this repo to understand the various data structures and built them with python 
+This repo contains the implementation of the most used data structures built <br /> by using python programming language. <br />
+You can use this repo to understand the various 
+- data structures
+- built them on your own  
+- Use them in your projects.
+<br />
+
 The datastructure.py contains implementaion of :
+- Stack
+- Queue 
+- Max Priority Queue
+- Min Priority Queue 
+- Min Heap
+- Max Heap
+- Double Ended Queue 
+- Bloom Filter 
+
+Datastructures implemented seperately :
+- Binary Tree 
+- Link List 
+
+Next Implmentation to add 
+- Binary Search Tree 
+- Treaps
+- Directed Graphs 
+- Undirected Graphs 
+- K Dimentional Tree 
+
+# Refer this for Help
+
 - stack 
   - .put(value_to_add) - allows you to add element in the stack !
   - .pop(return_pop_element=False) - allows you to remove the top element of the stack also returns if return true !
@@ -99,9 +126,3 @@ from datastructure import stack ...
 s = stack() 
 *with every function you can use the .help() method to access the help method 
 
-Next Implmentation  
-- Binary Search Tree 
-- Treaps
-- Directed Graphs 
-- Undirected Graphs 
-- K Dimentional Tree 
