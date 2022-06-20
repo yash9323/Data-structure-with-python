@@ -46,6 +46,7 @@ Next Implmentation to add
   - .put_list(list) - allows you to add a list of elements into the queue !
   - .last_of_queue(return_element(boolean)) - returns or prints the bottom of the queue 
   - .start_of_queue(return_element(boolean)) - returns or prints the top of the queue !
+  - .size_of_queue() - returns the size of the queue
   
 - max priority queue 
   - .enqueue(value_to_add) - allows you to add element in the queue !
@@ -120,6 +121,7 @@ Next Implmentation to add
   mheap.size_of_heap() -- prints the size of the heap <br />
   mheap.print_heap() --prints the heap <br />
   mheap.peak() -- prints the min value of the heap <br /> 
+  depth_of_heap() -- returns the depth of heap <br />
 
 # You can use import the datastructure .py in your program as 
 from datastructure import stack ... 
