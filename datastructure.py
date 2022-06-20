@@ -1,3 +1,13 @@
+import os,sys
+
+# Disable print
+def blockPrint():
+    sys.stdout = open(os.devnull, 'w')
+
+# Restore print 
+def enablePrint():
+    sys.stdout = sys.__stdout__
+
 class stack:
     def __init__(self):
         self.s = []
@@ -101,6 +111,10 @@ class queue:
             return self.q[0] 
         else:
             print(f"{self.q[0]} is at the start of the queue !")
+    
+    def size_of_queue(self):
+        return len(self.q)
+    
     def help(self):
         print(".enqueue(value_to_add) - allows you to add element in the queue !")
         print(".dequeue(return_pop_element=False) - allows you to remove the start element of the queue also returns if return true !")
@@ -403,6 +417,19 @@ class minheap:
     def print_heap(self):
         print(self.heap[1:])
 
+    def depth_of_heap(self):
+        blockPrint()
+        q = queue()
+        index = 1
+        try:
+            while True:
+                q.enqueue(self.heap[index])
+                index = index * 2
+        except:
+            pass
+        enablePrint()
+        return q.size_of_queue()
+        
     def peek(self):
         print("Min value is : ",self.heap[1])
 
@@ -419,6 +446,19 @@ class maxheap:
         self.heap[index] = self.heap[parent]
         self.heap[parent] = temp
     
+    def depth_of_heap(self):
+        blockPrint()
+        q = queue()
+        index = 1
+        try:
+            while True:
+                q.enqueue(self.heap[index])
+                index = index * 2
+        except:
+            pass
+        enablePrint()
+        return q.size_of_queue()
+        
     def add_node(self,val):
         self.heap.append(val)
         if len(self.heap) == 2:
