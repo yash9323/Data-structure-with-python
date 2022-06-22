@@ -15,13 +15,13 @@ The datastructure.py contains implementaion of :
 - Max Heap
 - Double Ended Queue 
 - Bloom Filter 
+- Binary Search Tree 
 
 Datastructures implemented seperately :
 - Binary Tree 
 - Link List 
 
 Next Implmentation to add 
-- Binary Search Tree 
 - Treaps
 - Directed Graphs 
 - Undirected Graphs 
@@ -122,6 +122,15 @@ Next Implmentation to add
   mheap.print_heap() --prints the heap <br />
   mheap.peak() -- prints the min value of the heap <br /> 
   depth_of_heap() -- returns the depth of heap <br />
+
+- Binary Search Tree 
+  You can use Binary Search Tree as <br />
+  from datastructure import BinarySearchTree <br />
+  bst = BinarySearchTree(val) -- initialize the bst with root val <br />
+  bst.add_node(val) -- to add node to the bst <br />
+  bst.in_order_traversal() --prints the inorder traversal of the tree <br />
+  bst.delete_node(val) -- deletes nodes and rearranges it <br />
+  bst.height() -- prints the height of the tree <br />
 
 # You can use import the datastructure .py in your program as 
 from datastructure import stack ... 

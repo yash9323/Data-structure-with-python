@@ -1,4 +1,5 @@
 import os,sys
+from collections import deque
 
 # Disable print
 def blockPrint():
@@ -511,4 +512,138 @@ class maxheap:
 
     def peek(self):
         print("Max value is : ",self.heap[1])
-    
+
+class BinarySearchTree:
+    def __init__(self,val):
+        self.root = self.Node(val)
+
+    class Node:
+        def __init__(self,data):
+            self.data = data 
+            self.left = None 
+            self.right = None 
+
+    def add_node(self,val):
+        curr = self.root 
+        while True:
+            if val <= curr.data :
+                if not curr.left :
+                    curr.left = self.Node(val)
+                    break
+                else:
+                    curr = curr.left 
+                    continue
+            if val > curr.data :
+                if not curr.right :
+                    curr.right = self.Node(val)
+                    break
+                else:
+                    curr = curr.right 
+                    continue
+
+    def in_order_traversal(self):
+        s = deque()
+        curr = self.root
+        while s or curr :
+            if curr:
+                s.append(curr)
+                curr = curr.left
+            else:
+                curr = s.pop()
+                print(curr.data,end=" ")
+                curr = curr.right
+        print("\n")
+
+    def Maxi(self,treeee):
+        curr = treeee
+        prev = None 
+        while True :
+            if curr.left :
+                prev = curr
+                try:
+                    curr = curr.left 
+                except:
+                    pass
+            else:
+                if prev:
+                    prev.left = None 
+                else:
+                    treeee = None 
+                break
+        return curr
+
+    def height(self):
+        q=deque()
+        q.append(self.root)
+        ht=0
+        while q :
+            size=len(q)
+            while size>0:
+                curr=q.popleft()
+                if curr.left:
+                    q.append(curr.left)
+                if curr.right:
+                    q.append(curr.right)
+                size=size-1
+            ht=ht+1
+        print("Height of tree is :",ht) 
+
+    def delete_node(self,val):
+        curr = self.root 
+        while True :
+            if val == curr.data :
+                if not curr.left and not curr.right:
+                    if right:
+                        prev.right = None 
+                    if left:
+                        prev.left = None 
+                    break
+
+                if curr.left and curr.right :
+                    tree_subtree_left = curr.left
+                    tree_subtree_right = curr.right
+                    if right:
+                        l = self.Maxi(tree_subtree_right)
+                        prev.right = l
+                        if not l.left or l.right :
+                            pass
+                        else:
+                            l.right = tree_subtree_right
+                        l.left = tree_subtree_left
+                        break
+                    if left:
+                        l = self.Maxi(tree_subtree_right)
+                        prev.left = l
+                        if not l.left or l.right :
+                            pass
+                        else:
+                            l.right = tree_subtree_right
+                        l.left = tree_subtree_left
+                        break 
+
+                else:
+                    if right:
+                        prev.right = None 
+                    if left:
+                        prev.left = None 
+                    if curr.left :
+                        to_add = curr.left
+                        curr.left = None 
+                    else:
+                        to_add = curr.right
+                        curr.right = None  
+                    self.add_node(to_add.data)
+                    break
+
+            if val > curr.data :
+                prev = curr 
+                curr = curr.right
+                right = True 
+                left = False
+
+            if val < curr.data :
+                right = False 
+                left = True
+                prev = curr 
+                curr = curr.left
+
