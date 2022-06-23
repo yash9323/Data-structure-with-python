@@ -27,6 +27,7 @@ Next Implmentation to add
 - Directed Graphs 
 - Undirected Graphs 
 - K Dimentional Tree 
+- skip list 
 
 # Refer this for Help
 
