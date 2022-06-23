@@ -16,10 +16,11 @@ The datastructure.py contains implementaion of :
 - Double Ended Queue 
 - Bloom Filter 
 - Binary Search Tree 
+- Link List 
+- Circular Link List 
 
 Datastructures implemented seperately :
 - Binary Tree 
-- Link List 
 
 Next Implmentation to add 
 - Treaps
@@ -82,7 +83,7 @@ Next Implmentation to add
   - You can use the .check() method to check into the filter !
 
 - LinkList 
-  - You can intialize the link list by #from slinklist import linklist and then s = linklist(rootval)
+  - You can intialize the link list by #from datastructure import linklist and then s = linklist(rootval)
   - You can use the add_node_start(val) to add value to the start of the link list
   - You can use the add_node_end(val) to add value to the end of the link list 
   - You can use the print_lisk_list() to print the link list 
@@ -131,6 +132,16 @@ Next Implmentation to add
   bst.in_order_traversal() --prints the inorder traversal of the tree <br />
   bst.delete_node(val) -- deletes nodes and rearranges it <br />
   bst.height() -- prints the height of the tree <br />
+
+- Circular Link List 
+  You can use the Circular Link list as follows <br />
+  from datastructure import circularlinklist <br />
+  cll = circularlinklist(val) -- initialize linklist with head val <br />
+  cll.add_start(val) -- Adds a node to the start of the  circular link list <br />
+  cll.add_start(end) -- Adds a node to the end of the circular link list <br />
+  cll.delete_start() -- Deletes a node from the start of the circular link list <br />
+  cll.delete_end() -- Deletes a node from the end of the circular link list <br />
+  cll.print_link_list() -- Prints the Link list <br />
 
 # You can use import the datastructure .py in your program as 
 from datastructure import stack ... 

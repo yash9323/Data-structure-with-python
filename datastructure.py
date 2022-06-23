@@ -647,3 +647,159 @@ class BinarySearchTree:
                 prev = curr 
                 curr = curr.left
 
+class circularlinklist:
+    def __init__(self,val):
+        self.head = self.node(val)
+        self.head.next = self.head
+
+    class node:
+        def __init__(self,val,next=None):
+            self.data = val 
+            self.next = next
+
+    def add_start(self,val):
+        i = self.head
+        temp = self.head
+        while True:
+            if i.next == self.head:
+                new_node = self.node(val)
+                i.next = new_node
+                self.head = new_node 
+                new_node.next = temp
+                break
+            i = i.next
+        
+    def add_end(self,val):
+        i = self.head
+        temp = self.head
+        while True:
+            if i.next == self.head:
+                new_node = self.node(val)
+                i.next = new_node
+                new_node.next = temp
+                break
+            i = i.next
+
+    def print_link_list(self):
+        i  = self.head 
+        print("Head->",end="")
+        n=0
+        while i:
+            n+=1
+            print(i.data,end="->")
+            if i.next == self.head:
+                break
+            i = i.next
+        print("Head")
+
+    def delete_start(self):
+        to_point = self.head.next
+        i = self.head
+        while True:
+            if i.next == self.head:
+                i.next = to_point
+                self.head = to_point
+                break
+            i = i.next 
+
+    def delete_end(self):
+        temp = self.head 
+        i = self.head
+        prev = None
+        while True:
+            if i.next == temp:
+                prev.next = temp
+                del i 
+                break
+            prev = i 
+            i = i.next 
+
+    def help(self):
+        print("""
+        Circular Link List with Python 
+        You can use the Circular Link list as follows 
+        from datastructure import circularlinklist
+        cll = circularlinklist(val) -- initialize linklist with head val 
+        cll.add_start(val) -- Adds a node to the start of the  circular link list 
+        cll.add_start(end) -- Adds a node to the end of the circular link list 
+        cll.delete_start() -- Deletes a node from the start of the circular link list 
+        cll.delete_end() -- Deletes a node from the end of the circular link list 
+        cll.print_link_list() -- Prints the Link list 
+        """)
+
+class linklist:
+    def __init__(self,root_val):
+        self.root = self.node(root_val)
+    
+    class node:
+        def __init__(self,data,next_node = None):
+            self.data = data
+            self.next_node = next_node
+    
+    def add_node_start(self,val):
+        n = self.node(val,self.root) 
+        self.root = n   
+    
+    def print_link_list(self):
+        if self.root is None :
+            print("LL empty !")
+        i  = self.root 
+        while i:
+            print(i.data,end="->")
+            i = i.next_node
+        print("End\n")
+    
+    def add_node_end(self,val):
+        i = self.root 
+        while i:
+            if i.next_node is None:
+                i.next_node = self.node(val)
+                break
+            i = i.next_node
+    
+    def delete_start(self):
+        i = self.root 
+        self.root = i.next_node
+        del i 
+    
+    def delete_end(self):
+        i = self.root
+        while i:
+            if i.next_node is None:
+                prev.next_node = None 
+                del i 
+                break
+            prev = i 
+            i = i.next_node
+    
+    def delete_between(self,val):
+        i = self.root
+        while i :
+            if i.data == val :
+                prev.next_node = i.next_node
+                del i 
+                break
+            prev = i 
+            i = i.next_node
+    
+    def reverse_link_list(self):
+        current = self.root
+        prev = None
+        while current :
+            next_node = current.next_node
+            current.next_node = prev
+            prev = current
+            if next_node is None:
+                self.root = current 
+            current = next_node
+    
+    def help(self):
+        print("""- You can intialize the link list by #from slinklist import linklist and then s = linklist(rootval)
+  - You can use the add_node_start(val) to add value to the start of the link list
+  - You can use the add_node_end(val) to add value to the end of the link list 
+  - You can use the print_lisk_list() to print the link list 
+  - You can use the delete_start() to delete the node from start of linklist 
+  - You can use the delete_end() to delete the node from end of linklist 
+  - You can use the delete_between(val) to delete the node in between of linklist 
+  - You can use the reverse_link_list() to reverse the link list """)
+                
