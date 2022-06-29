@@ -802,4 +802,94 @@ class linklist:
   - You can use the delete_end() to delete the node from end of linklist 
   - You can use the delete_between(val) to delete the node in between of linklist 
   - You can use the reverse_link_list() to reverse the link list """)
-                
+
+# Undirected Graph           
+class udgraph:
+    def __init__(self):
+        self.d = {}
+
+    def add_node(self,node):
+        if node in self.d.keys():
+            print("Collision Trying to add the same node twice !")
+            return 
+        self.d[node] = []
+
+    def add_edge(self,node,another_node):
+        if self.check(node,another_node):
+    
+            self.d[node].append(another_node)
+            self.d[another_node].append(node)
+
+    def delete_edge(self,node,another_node):
+        if self.check(node,another_node):
+            self.d[node].remove(another_node)
+            self.d[another_node].remove(node)
+
+    def check(self,node,another_node):
+        if node not in self.d.keys():
+            print("first Node not in graph , please add node in graph first !")
+            return None
+        if another_node not in self.d.keys():
+            print("Second Node not in graph , please add node in graph first !")
+            return None 
+        return True
+
+    def delete_node(self,node):
+        a =[]
+        for i in self.d[node]:
+            a.append(i)
+        for i in a:
+            self.delete_edge(node,i) 
+        del self.d[node]
+
+    def degree_node(self,node):
+        print(len(self.d[node]))
+
+    def find_isolated_nodess(self,node= None):
+        isolated_nodes = []
+        for i,j in self.d.items():
+            if not j:
+                isolated_nodes.append(i)
+        if node:
+            if node in isolated_nodes:
+                print(f"The node {node} is isolated ! add edges ")
+            else:
+                print("Not Isolated")
+        else:
+            print("isolated nodes :")
+            for i in isolated_nodes:
+                print(i)
+
+    def show_all_nodes(self):
+        for yo in self.d.keys():
+            print(f"Node {yo}")
+
+    def show_all_edges(self):
+        for i,j in self.d.items():
+            print(f"Edges from Node {i}")
+            for edge in j :
+                print(i,"==>",edge)
+            print("")
+
+    def show_edges_from_node(self,node):
+        print(f"Edges from Node {node}")
+        for i in self.d[node]:
+            print(node,"==>",i)
+
+    def find_paths(self, start_vertex, end_vertex, path=[]):
+        graph = self.d
+        path = path + [start_vertex]
+        if start_vertex == end_vertex:
+            return [path]
+        if start_vertex not in graph:
+            return []
+        paths = []
+        for vertex in graph[start_vertex]:
+            if vertex not in path:
+                extended_path = self.find_paths(vertex, 
+                                               end_vertex, 
+                                               path)
+                for p in extended_path:
+                    paths.append(p)
+        return paths
+    
