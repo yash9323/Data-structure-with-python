@@ -146,7 +146,7 @@ Next Implmentation to add
   cll.delete_end() -- Deletes a node from the end of the circular link list <br />
   cll.print_link_list() -- Prints the Link list <br />
 
-- Undirected Graphs
+- Undirected Graphs <br />
   You can use the undirected graphs as follows <br />
   from datastructure import udgraph <br />
   g = udgraph() <br />
@@ -161,7 +161,7 @@ Next Implmentation to add
   g.find_isolated_nodes(node=None) => If none returns all the isolated nodes else checks if the node entered is isolated or not <br />
   g.degree_node(node) => prints the degree of the specified node <br />
 
-- directed Graphs
+- Directed Graphs <br />
   You can use the directed graphs as follows <br />
   from datastructure import dgraph <br />
   g = dgraph() <br />
