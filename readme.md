@@ -19,6 +19,7 @@ The datastructure.py contains implementaion of :
 - Link List 
 - Circular Link List 
 - Un-Directed Graphs
+- Directed Graphs
 
 Datastructures implemented seperately :
 - Binary Tree 
@@ -159,6 +160,19 @@ Next Implmentation to add
   g.show_edges_from_node(node) => prints all the edges from a particular node <br />
   g.find_isolated_nodes(node=None) => If none returns all the isolated nodes else checks if the node entered is isolated or not <br />
   g.degree_node(node) => prints the degree of the specified node <br />
+
+- directed Graphs
+  You can use the directed graphs as follows <br />
+  from datastructure import dgraph <br />
+  g = dgraph() <br />
+  g.add_node(value) => Adds a node <br />
+  g.add_edge(one_node,another_node) => Adds a edge between one_node and another node <br />
+  g.delete_node(node) => Deletes a node from the graph <br />
+  g.delete_edge(node,another_node) => deletes the edge specified <br />
+  g.find_paths(node,another_node) => Returns all the possible paths from one_node to another <br />
+  g.show_all_nodes() => Prints all the nodes <br />
+  g.show_all_edges() => prints all the edges <br />
+  g.show_edges_from_node(node) => prints all the edges from a particular node <br />
 
 # You can use import the datastructure .py in your program as 
 from datastructure import stack ... 

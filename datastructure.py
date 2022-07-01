@@ -893,3 +893,63 @@ class udgraph:
                     paths.append(p)
         return paths
     
+# Directed Graph
+class dgraph:
+    def __init__(self):
+        self.d = {}
+
+    def add_node(self,node):
+        if node in self.d.keys():
+            print("Node already exists !")
+            return 
+        self.d[node] = []
+
+    def add_edge(self,node,another_node):
+        if node not in self.d.keys() or another_node not in self.d.keys():
+            print("Node Not in Graph Please add node first")
+            return 
+        self.d[node].append(another_node)
+        print(f"Edge from Node {node} to Node {another_node} added succesfully !")
+
+    def delte_node(self,node):
+        for i in self.d.keys():
+            if node in self.d[i]:
+                self.d[i].remove(node)
+        del self.d[node]
+
+    def delete_edge(self,node,another_node):
+        if node not in self.d.keys() or another_node not in self.d.keys():
+            print("Node Not in Graph Please add node first")
+            return
+        self.d[node].remove(another_node)
+
+    def show_all_nodes(self):
+        print("Nodes in the graph are :")
+        for i in self.d.keys():
+            print("Node ",i)
+      
+    def show_all_edges(self):
+        for i,j in self.d.items():
+            print("Node ",i)
+            for edges in j:
+                print(i," ==> ",edges)
+            print("")
+
+    def show_edges_from_a_node(self,node):
+        for edges in self.d[node]:
+                print(node," ==> ",edges)
+
+    def find_path(self,node,another_node,path=[]):
+        graph = self.d
+        path = path + [node]
+        if node == another_node:
+            return [path]
+        if node not in graph:
+            return []
+        paths = []
+        for vertex in graph[node]:
+            if vertex not in path:
+                extended_path = self.find_path(vertex,another_node,path)
+                for p in extended_path:
+                    paths.append(p)
+        return paths
