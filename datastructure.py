@@ -953,3 +953,81 @@ class dgraph:
                 for p in extended_path:
                     paths.append(p)
         return paths
+
+# Directed Weighted Graph
+class dweightedgraph:
+    def __init__(self):
+        self.d = {}
+
+    def add_node(self,node):
+        if node in self.d.keys():
+            print("Node already exists !")
+            return 
+        self.d[node] = []
+
+    def add_edge(self,node,another_node,weight):
+        if node not in self.d.keys() or another_node not in self.d.keys():
+            print("Node Not in Graph Please add node first")
+            return 
+        self.d[node].append((another_node,weight))
+        print(f"Edge from Node {node} to Node {another_node} with {weight} added succesfully !")
+
+    def show_all_edges(self):
+        for i,j in self.d.items():
+            print("Node ",i)
+            for edges in j:
+                print(i," ==> ",edges[0]," weight ==> ",edges[1])
+            print("")
+
+    def show_edges_from_a_node(self,node):
+        for edges in self.d[node]:
+                print(node," ==> ",edges[0]," weight ==> ",edges[1])
+
+    def delte_node(self,node):
+        for i,j in self.d.items():
+            for edges in j:
+                if edges[0] == node:
+                    self.d[i].remove(edges)
+        del self.d[node]
+            
+    def delete_edge(self,node,another_node):
+        if node not in self.d.keys() or another_node not in self.d.keys():
+            print("Node Not in Graph Please add node first")
+            return
+
+        for edges in self.d[node]:
+            if edges[0] == another_node:
+                self.d[node].remove(edges)
+                break
+
+    def show_all_nodes(self):
+        print("Nodes in the graph are :")
+        for i in self.d.keys():
+            print("Node ",i)
+      
+    def dijkstras_algorithm(self,start,end):
+        inf = sys.maxsize
+        node_data = {}
+        for i in self.d.keys():
+            node_data[i] = {'cost':inf,'pred':[]}   
+        node_data[start]['cost'] = 0  
+        visited = []
+        temp = start 
+        nextt = None  
+        minn = inf
+        for i in range(len(self.d.keys())):
+            if temp not in visited:
+                visited.append(temp)
+                for j in range(len(self.d[temp])):
+                    a = self.d[temp][j][0]
+                    if a not in visited:
+                        cost = node_data[temp]['cost'] + self.d[temp][j][1]
+                        if cost < node_data[a]['cost']:
+                            node_data[a]['cost'] = cost
+                            node_data[a]['pred'] = node_data[temp]['pred'] + [temp]
+                        if cost < minn :
+                            minn = cost 
+                            nextt = a
+            temp = nextt            
+        print("Shortest Distance:",node_data[end]['cost'])
+        print("Shortest Path: ",node_data[end]['pred']+[end])

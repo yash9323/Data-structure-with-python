@@ -20,6 +20,7 @@ The datastructure.py contains implementaion of :
 - Circular Link List 
 - Un-Directed Graphs
 - Directed Graphs
+- Weighted Directed Graphs
 
 Datastructures implemented seperately :
 - Binary Tree 
@@ -173,6 +174,18 @@ Next Implmentation to add
   g.show_all_nodes() => Prints all the nodes <br />
   g.show_all_edges() => prints all the edges <br />
   g.show_edges_from_node(node) => prints all the edges from a particular node <br />
+
+- Weighted Directed Graphs <br />
+  from datastructure import dweightedgraph<br />
+  g = dweightedgraph()
+  g.add_node(value) => Adds a node <br />
+  g.add_edge(one_node,another_node,weight) => Adds a edge between one_node and another node with weight  <br />
+  g.delete_node(node) => Deletes a node from the graph <br />
+  g.delete_edge(node,another_node) => deletes the edge specified <br />
+  g.dijkstras_algorithm(node,another_node) => Returns shortest path from one node to another with the smallest distance  <br />
+  g.show_all_nodes() => Prints all the nodes <br />
+  g.show_all_edges() => prints all the edges <br />
+  g.show_edges_from_node(node) => prints all the edges from a particular node 
 
 # You can use import the datastructure .py in your program as 
 from datastructure import stack ... 
