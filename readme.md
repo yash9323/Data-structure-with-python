@@ -27,8 +27,6 @@ Datastructures implemented seperately :
 
 Next Implmentation to add 
 - Treaps
-- Directed Graphs 
-- Undirected Graphs 
 - K Dimentional Tree 
 - skip list 
 
