@@ -864,6 +864,22 @@ class udgraph:
         for yo in self.d.keys():
             print(f"Node {yo}")
 
+    def bfs(self,start):
+        visited = []
+        queue = []
+        queue.append(start)
+        visited.append(start)
+        while queue:
+            print(visited)
+            s = queue.pop(0)
+            print(s,end=" ")
+            for node in self.d[s] :
+                if node in visited:
+                    pass
+                else:
+                    queue.append(node)
+                    visited.append(node)
+
     def show_all_edges(self):
         for i,j in self.d.items():
             print(f"Edges from Node {i}")
@@ -938,6 +954,21 @@ class dgraph:
     def show_edges_from_a_node(self,node):
         for edges in self.d[node]:
                 print(node," ==> ",edges)
+    
+    def bfs(self,start):
+        visited = []
+        queue = []
+        queue.append(start)
+        visited.append(start)
+        while queue:
+            s = queue.pop(0)
+            print( s , end=" ")
+            for node in self.d[s]:
+                if node in visited:
+                    pass 
+                else:
+                    visited.append(node)
+                    queue.append(node)
 
     def find_path(self,node,another_node,path=[]):
         graph = self.d
